@@ -1,0 +1,163 @@
+:root {
+    --color-primary-teal: hsl(179, 62%, 43%);
+    --color-primary-green: hsl(71, 73%, 54%);
+    
+    --color-neutral-white: hsl(0, 0%, 100%);
+    --color-neutral-teal: hsl(179, 47%, 52%);
+    --color-neutral-gray: hsl(218, 22%, 80%);
+
+    --ff-main: 'Karla', sans-serif;
+
+    --card-border-radius: 5px;
+    --card-box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    font-size: 1rem;
+    font-family: var(--ff-main);
+}
+
+.attribution {
+    text-align: center; 
+}
+
+.attribution a {
+    color: var(--color-primary-teal); 
+}
+
+.card-container {
+    display: grid;
+    max-width: 450px;
+}
+
+.card__header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 30px 25px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-top-left-radius: var(--card-border-radius);
+    border-top-right-radius: var(--card-border-radius);
+    background: var(--color-neutral-white);
+}
+
+.card__header h1 {
+    font-size: 1.8rem;
+    color: var(--color-primary-teal);
+}
+
+.card-sub {
+    font-size: 1.4rem;
+    color: var(--color-primary-green);
+}
+
+.card-paragraph {
+    color: var(--color-neutral-gray);
+}
+
+.card__pricing {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 25px 30px;
+    background: var(--color-primary-teal);
+}
+
+.card__pricing h2 {
+    font-size: 1.4rem;
+    color: var(--color-neutral-white)
+}
+
+.card__pricing p {
+    color: var(--color-neutral-white);
+}
+
+.card__pricing a {
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+    color: var(--color-neutral-white);
+    text-decoration: none;
+    background: var(--color-primary-green);
+    border-radius: 8px;
+    padding: 12px 0;
+}
+
+.card-content-wrapper {
+    margin-bottom: 25px;
+}
+
+.card-price-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Currency Amount Text */
+.card-price-text span:nth-child(1) {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-neutral-white);
+}
+
+/* Per Month Text */
+.card-price-text span:nth-child(2) {
+    color: var(--color-neutral-gray);
+}
+
+.card__why-us {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px 30px;
+    border-bottom-right-radius: var(--card-border-radius);
+    border-bottom-left-radius: var(--card-border-radius);
+    background: var(--color-neutral-teal);
+}
+
+.card__why-us h2 {
+    font-size: 1.4rem;
+    color: var(--color-neutral-white);
+}
+
+.card__why-us ul {
+    margin: 0;
+    padding: 0;
+}
+
+.card__why-us li {
+    color: var(--color-neutral-white);
+    text-decoration: none;
+}
+
+
+/* Tablets And Desktops */
+@media screen and (min-width: 48em) {
+    .card-container {
+        max-width: 650px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .card__header {
+        grid-column: 1 / 3;
+        padding: 40px 35px;
+    }
+
+    .card__pricing {
+        padding: 40px 35px;
+        border-bottom-left-radius: var(--card-border-radius);
+    }
+
+    .card__why-us {
+        padding: 40px 35px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: var(--card-border-radius);
+    }
+}
